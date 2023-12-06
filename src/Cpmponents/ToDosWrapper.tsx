@@ -31,7 +31,7 @@ function ToDosWrapper() {
 
       {/* display todos */}
       {todos.map((todo, index) => (
-        <Todo key={index}/>
+        <Todo key={index} todo={todo} deleteTodo={deleteTodo} toggleComplete={toggleComplete}/>
       ))}
     </div>
   );
