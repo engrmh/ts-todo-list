@@ -18,7 +18,10 @@ function ToDosWrapper() {
     return true;
   };
 
-  const deleteTodo = (id: string) => {};
+  const deleteTodo = (id: string) => {
+    setTodos(todos.filter(todo => todo.id !== id ))
+    return true
+  };
 
   const toggleComplete = (id: string) => {};
 

@@ -5,7 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 interface ITodoPRops {
   todo: ITodo;
-  deleteTodo: (id: string) => void;
+  deleteTodo: (id: string) => boolean;
   toggleComplete: (id: string) => void;
 }
 
@@ -18,7 +18,7 @@ function Todo({ todo, deleteTodo, toggleComplete }: ITodoPRops) {
         {todo.title}
       </p>
       <div>
-        <FontAwesomeIcon icon={faTrash} />
+        <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(todo.id)}/>
       </div>
     </div>
   );
