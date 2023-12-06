@@ -6,13 +6,14 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 interface ITodoPRops {
   todo: ITodo;
   deleteTodo: (id: string) => boolean;
-  toggleComplete: (id: string) => void;
+  toggleComplete: (id: string) => boolean;
 }
 
 function Todo({ todo, deleteTodo, toggleComplete }: ITodoPRops) {
   return (
     <div className="Todo">
       <p
+      onClick={() => toggleComplete(todo.id)}
         className={`${todo.completed ? "completed" : ""}`} // or completed className
       >
         {todo.title}
